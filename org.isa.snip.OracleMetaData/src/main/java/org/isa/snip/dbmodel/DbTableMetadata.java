@@ -13,13 +13,39 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
+
 package org.isa.snip.dbmodel;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  */
-public class App 
-{
-    public static void main( String[] pArgs ) {
-        System.out.println( "ISA Snippet [org.isa.snip.OracleMetaData]" );        
-    }
+public class DbTableMetadata extends AbstractDbMetadata {
+
+	/**
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Map< String, DbColumnMetadata > columns = new LinkedHashMap<>();
+	
+	/**
+	 */
+	public DbTableMetadata(String pName) {
+		super(pName);
+	}
+
+	/**
+	 * @param pCol
+	 */
+	public void addColumn(DbColumnMetadata pCol) {
+		columns.put(pCol.getName(), pCol);
+	}
+
+	/**
+	 * @return the columns
+	 */
+	public Map<String, DbColumnMetadata> getColumns() {
+		return columns;
+	}
 }
