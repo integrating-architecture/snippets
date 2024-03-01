@@ -1,6 +1,8 @@
 # Snippets
 Various code snippets.
 
+
+
 ## Disclamer
 Affects all source and binary code from
     https://github.com/integrating-architecture/snippets.git
@@ -8,7 +10,7 @@ Affects all source and binary code from
 Use and redistribution in source and binary forms,
 with or without modification, are permitted WITHOUT restriction of any kind.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+THIS SOFTWARE IS PROVIDED BY THE AUTHORS, COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
 THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
 PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE 
