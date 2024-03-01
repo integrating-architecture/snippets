@@ -1,8 +1,8 @@
 # Snippets
 Various code snippets.  
-  
-
-
+<br />
+<br />
+<br />
 ## Disclamer  
 Affects all source and binary code from
     https://github.com/integrating-architecture/snippets.git  
