@@ -5,7 +5,7 @@ Various code snippets.
 * org.isa.snip.OracleMetaData - showcase of how to access oracle db metadata
 
 <br />
-<br />
+
 ## Disclamer  
 Affects all source and binary code from
     https://github.com/integrating-architecture/snippets.git  
