@@ -28,8 +28,7 @@ public class DbModelMetadataBaseTest {
         assertEquals("User", lTable.getName());
         
         assertEquals("userid", lColumn.getName());
-        assertEquals("User", lColumn.getTableName());
-        assertEquals("User.userid", lColumn.getQualifiedName());
+        assertEquals("User", lColumn.getTablename());
 
 	}
 

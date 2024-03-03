@@ -1,8 +1,7 @@
 /*Authored by www.integrating-architecture.de*/
 package org.isa.snip.dbmodel;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.sql.ResultSet;
 
 /**
  */
@@ -11,8 +10,8 @@ public class DbTableMetadata extends AbstractDbMetadata {
 	/**
 	 */
 	private static final long serialVersionUID = 1L;
-
-	private Map< String, DbColumnMetadata > columns = new LinkedHashMap<>();
+	
+	private String istemporary = "";
 	
 	/**
 	 */
@@ -21,16 +20,26 @@ public class DbTableMetadata extends AbstractDbMetadata {
 	}
 
 	/**
-	 * @param pCol
 	 */
-	public void addColumn(DbColumnMetadata pCol) {
-		columns.put(pCol.getName(), pCol);
+	public void fillFrom(ResultSet pRs) throws Exception {
+		setIstemporary(pRs.getString(temporary));
 	}
 
 	/**
-	 * @return the columns
 	 */
-	public Map<String, DbColumnMetadata> getColumns() {
-		return columns;
+	public void addColumn(DbColumnMetadata pDef) {
+		
+	}
+
+	/**
+	 */
+	public String getIstemporary() {
+		return istemporary;
+	}
+
+	/**
+	 */
+	public void setIstemporary(String istemporary) {
+		this.istemporary = istemporary;
 	}
 }
