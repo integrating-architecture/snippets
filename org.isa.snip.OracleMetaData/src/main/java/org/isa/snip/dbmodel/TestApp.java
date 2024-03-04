@@ -19,7 +19,8 @@ public class TestApp {
 
 		OracleDbModel lModel = new OracleDbModel();
 		try {
-			lModel.setDbConnection(new JdbcConnection()
+			lModel.setSchemaOwner("TEST")
+				.setDbConnection(new JdbcConnection()
 				.setUrl("jdbc:oracle:thin:@//localhost:1521/XEPDB1")
 				.setUser("test")
 				.connect("testpwd"));

@@ -87,6 +87,13 @@ public class OracleDbModel extends AbstractDbModel {
 
 	/**
 	 */
+	public OracleDbModel setSchemaOwner(String pOwner) {
+		schemaOwner = pOwner;
+		return this;
+	}
+	
+	/**
+	 */
 	public void setDbConnection(JdbcConnection pConnection) {
 		this.dbConnection = pConnection;
 	}
