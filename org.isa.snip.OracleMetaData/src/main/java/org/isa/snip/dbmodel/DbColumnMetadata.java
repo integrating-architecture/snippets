@@ -1,8 +1,6 @@
 /*Authored by www.integrating-architecture.de*/
 package org.isa.snip.dbmodel;
 
-import java.sql.ResultSet;
-
 /**
  */
 public class DbColumnMetadata extends AbstractDbMetadata {
@@ -16,7 +14,7 @@ public class DbColumnMetadata extends AbstractDbMetadata {
 	private String length = "";
 	private String precision = "";
 	private String scale = "";
-	private String isnullable = "";
+	private String nullable = "";
 	private String charlength = "";
 	private String comment = "";
 
@@ -45,15 +43,14 @@ public class DbColumnMetadata extends AbstractDbMetadata {
 
 	/**
 	 */
-	public void fillFrom(ResultSet pRs) throws Exception {
-		setTablename(pRs.getString(table_name));
-		setType(pRs.getString(data_type));
-		setLength(pRs.getString(data_length));
-		setPrecision(pRs.getString(data_precision));
-		setScale(pRs.getString(data_scale));
-		
-		setNullable(pRs.getString(nullable));
-		setCharlength(pRs.getString(char_length));
+	public void addConstraint(DbConstraintMetadata pDef) {
+		//TODO
+	}
+	
+	/**
+	 */
+	public void addIndex(DbIndexMetadata pDef) {
+		//TODO		
 	}
 
 	/**
@@ -119,13 +116,13 @@ public class DbColumnMetadata extends AbstractDbMetadata {
 	/**
 	 */
 	public String getNullable() {
-		return isnullable;
+		return nullable;
 	}
 
 	/**
 	 */
 	public void setNullable(String nullable) {
-		this.isnullable = nullable;
+		this.nullable = nullable;
 	}
 
 	/**

@@ -1,8 +1,6 @@
 /*Authored by www.integrating-architecture.de*/
 package org.isa.snip.dbmodel;
 
-import java.sql.ResultSet;
-
 /**
  */
 public class DbTableMetadata extends AbstractDbMetadata {
@@ -11,18 +9,12 @@ public class DbTableMetadata extends AbstractDbMetadata {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String istemporary = "";
+	private String temporary = "";
 	
 	/**
 	 */
 	public DbTableMetadata(String pName) {
 		super(pName);
-	}
-
-	/**
-	 */
-	public void fillFrom(ResultSet pRs) throws Exception {
-		setIstemporary(pRs.getString(temporary));
 	}
 
 	/**
@@ -33,13 +25,13 @@ public class DbTableMetadata extends AbstractDbMetadata {
 
 	/**
 	 */
-	public String getIstemporary() {
-		return istemporary;
+	public String getTemporary() {
+		return temporary;
 	}
 
 	/**
 	 */
-	public void setIstemporary(String istemporary) {
-		this.istemporary = istemporary;
+	public void setTemporary(String temporary) {
+		this.temporary = temporary;
 	}
 }

@@ -6,12 +6,12 @@ import java.io.Serializable;
 /**
  * Abstract db metadata base class.
  */
-public abstract class AbstractDbMetadata implements Serializable, DbQueryFieldNames {
+public abstract class AbstractDbMetadata implements Serializable {
 
 	/**
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	private String name = "";
 	private String sql = "";
 	private boolean isSysObject = false;

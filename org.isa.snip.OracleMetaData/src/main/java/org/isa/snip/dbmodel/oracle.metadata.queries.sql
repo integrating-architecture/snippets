@@ -1,5 +1,7 @@
 <!-- Authored by www.integrating-architecture.de -->
 
+<!--Oracle Metadata SQL Queries-->
+
 <!--Tables and Columns from all-->
 <all.tables.and.columns>
 SELECT
