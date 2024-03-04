@@ -20,7 +20,7 @@ public class DbTableMetadata extends AbstractDbMetadata {
 	/**
 	 */
 	public void addColumn(DbColumnMetadata pDef) {
-		
+		//TODO
 	}
 
 	/**
