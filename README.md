@@ -1,5 +1,5 @@
 # Snippets
-Various code snippets.  
+Various coding examples.  
 <br />
 ### Description
 * <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.OracleMetaData">org.isa.snip.OracleMetaData</a> - showcase of how to access oracle db metadata
