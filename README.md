@@ -2,7 +2,7 @@
 Various coding examples.  
 <br />
 ### Description
-* <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.OracleMetaData">org.isa.snip.OracleMetaData</a> - Showcase of how to access Oracle DB Metadata
+* <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.OracleMetaData">org.isa.snip.OracleMetaData</a> - Showcase of accessing Oracle DB DDL Metadata from Java
 
 <br />
 
