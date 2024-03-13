@@ -1,13 +1,14 @@
 
 
 # IDEs e.g. Eclipse
-
 */target
 */.classpath
 */.project
 */.settings
 */src/site
 */extlibs
+
+*.cmd
 
 # Compiled class file
 *.class
