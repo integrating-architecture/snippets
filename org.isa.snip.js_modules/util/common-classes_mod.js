@@ -1,7 +1,7 @@
 /*Authored by www.integrating-architecture.de*/
 
 /**
- *  A simple chain element to build a double linked, navigatable chain.
+ *  A trivial chain element for building a doubly linked chain.
  */
 export class ChainElem {
     constructor(pName, pElementsMap = null) {
