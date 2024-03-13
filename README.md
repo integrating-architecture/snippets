@@ -1,5 +1,7 @@
 # A public Snippets Repository 
-Various code snippets or examples - for illustrative or testing purposes only. 
+Various code snippets or examples - for illustrative or testing purposes only.
+
+Authored by: <a href="https://integrating-architecture.de/">www.integrating-architecture.de</a>
 <br />
 ### Description
 * <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.OracleMetaData">org.isa.snip.OracleMetaData</a> - Showcase of accessing Oracle DB DDL Metadata from Java
