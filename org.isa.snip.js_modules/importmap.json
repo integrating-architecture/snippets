@@ -1,0 +1,5 @@
+{
+    "imports": {
+        "util-common-classes": "https://integrating-architecture.github.io/snippets/org.isa.snip.js_modules/util/common-classes_mod.js"
+    }
+}
