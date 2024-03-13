@@ -3,6 +3,7 @@ Various coding examples.
 <br />
 ### Description
 * <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.OracleMetaData">org.isa.snip.OracleMetaData</a> - Showcase of accessing Oracle DB DDL Metadata from Java
+* <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.OracleMetaData">org.isa.snip.js_modules</a> - Sample of accessing Javascript Modules
 
 <br />
 
