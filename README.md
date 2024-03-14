@@ -5,7 +5,7 @@ Authored by: <a href="https://integrating-architecture.de/">www.integrating-arch
 <br />
 ### Description
 * <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.OracleMetaData">org.isa.snip.OracleMetaData</a> - Showcase of accessing Oracle DB DDL Metadata from Java
-* <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.js_modules">org.isa.snip.js_modules</a> - Example of defining and accessing a standard ECMA Javascript Module. The <a href="https://integrating-architecture.github.io/snippets/">Snippets-GitPage</a> is used to simulate a CDN host. 
+* <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.js_modules">org.isa.snip.js_modules</a> - Example of defining and accessing a standard ECMA Javascript Module. Using this <a href="https://integrating-architecture.github.io/snippets/">Snippets-GitPage</a> to simulate a CDN host (<a href="https://jsfiddle.net/integrating_architecture/q1a9y8m4/6/">Fiddle Test</a>). 
 
 <br />
 
