@@ -1,5 +1,5 @@
 # A public Snippets Repository 
-Various code snippets or examples - for illustrative or testing purposes - hosted on <a href="https://github.com/integrating-architecture">GitHub</a>
+Various code snippets and examples - for illustrative or testing purposes - hosted on <a href="https://github.com/integrating-architecture">GitHub</a>
 
 Authored by: <a href="https://integrating-architecture.de/">Andreas Weidinger - www.integrating-architecture.de</a> 
 <br />
