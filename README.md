@@ -6,7 +6,7 @@ Authored by: <a href="https://integrating-architecture.de/">Andreas Weidinger - 
 ### Description
 * <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.OracleMetaData">org.isa.snip.OracleMetaData</a> - Java sample accessing Oracle DB DDL Metadata
 * <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.js_modules">org.isa.snip.js_modules</a> - Sample of defining and accessing a standard ECMA Javascript Module. Using this <a href="https://integrating-architecture.github.io/snippets/">Snippets-GitPage</a> to simulate a CDN host (<a href="https://jsfiddle.net/integrating_architecture/q1a9y8m4/7/">Fiddle Test</a>).
-* <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.nodejs.oracledb-metadata">isa.snip.nodejs.oracledb-metadata</a> - Node JS sample accessing Oracle DB Metadata from JavaScript
+* <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.nodejs.oracledb-metadata">isa.snip.nodejs.oracledb-metadata</a> - Node JS sample accessing Oracle DB Metadata from JavaScript using <a href="https://github.com/oracle/node-oracledb">Node Oracle DB Driver Module</a>
 
 <br />
 
