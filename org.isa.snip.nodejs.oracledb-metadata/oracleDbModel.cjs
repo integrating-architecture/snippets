@@ -12,6 +12,34 @@ class OracleDbModel {
     indexes = new Map();
     sysIndexes = new Map();
 
+    toJSON() { 
+        return {
+            tables: Array.from(this.tables.values()),
+            columns: Array.from(this.columns.values()),
+            constraints: Array.from(this.constraints.values()),
+            sysConstraints: Array.from(this.sysConstraints.values()),
+            indexes: Array.from(this.indexes.values()),
+            sysIndexes: Array.from(this.sysIndexes.values())
+        };
+    }    
+    
+    toJSONString(space=0) { 
+        return JSON.stringify(this.toJSON(), null, space)
+    }
+
+    fromJSON(json) { 
+        if(typeof json === 'string' || json instanceof String){
+            json = JSON.parse(json);
+        }
+        this.tables = new Map(json.tables.map((elem) => [elem.name, new modeldef.DbTableMetadata().fromJSON(elem)]));
+        this.columns = new Map(json.columns.map((elem) => [elem.name, new modeldef.DbColumnMetadata().fromJSON(elem)]));
+        this.constraints = new Map(json.constraints.map((elem) => [elem.name, new modeldef.DbConstraintMetadata().fromJSON(elem)]));
+        this.sysConstraints = new Map(json.sysConstraints.map((elem) => [elem.name, new modeldef.DbConstraintMetadata().fromJSON(elem)]));
+        this.indexes = new Map(json.indexes.map((elem) => [elem.name, new modeldef.DbIndexMetadata().fromJSON(elem)]));
+        this.sysIndexes = new Map(json.sysIndexes.map((elem) => [elem.name, new modeldef.DbIndexMetadata().fromJSON(elem)]));
+        return this;
+    }
+
     /**
      */
     loadTablesAndColumsFrom(result) {

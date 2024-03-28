@@ -1,6 +1,7 @@
 /*Authored by www.integrating-architecture.de*/
 
 /**
+ * Predefined metadata queries as template literals in `...` backticks
  */
 exports.getAllTablesAndColumsSql = (owner) => {
     let sql = `

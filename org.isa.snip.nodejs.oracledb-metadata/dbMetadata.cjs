@@ -22,19 +22,48 @@ class AbstractDbMetadata {
     setSysObject(flag) {
         this.sysObject = flag;
     }
+
+    toJSON() { 
+        return {
+            name: this.name,
+            sysObject: this.sysObject
+        };
+    }    
+    
+    toJSONString(space=0) { 
+        return JSON.stringify(this.toJSON(), null, space)
+    }
+
+    fromJSON(json) { 
+        if(typeof json === 'string' || json instanceof String){
+            json = JSON.parse(json);
+        }
+        Object.assign(this, json);
+        return this;
+    }
 }
 
 /**
  */
 class DbTableMetadata extends AbstractDbMetadata {
     temporary = "";
-
-    constructor(name) {
-        super(name);
-    }
+    columnNames = new Set();
 
     addColumn(def){
-        //TODO
+        this.columnNames.add(def.getName());
+    }
+
+    toJSON() { 
+        let json = super.toJSON();
+        json.temporary = this.temporary;
+        json.columnNames = Array.from(this.columnNames.values());
+        return json;
+    }
+
+    fromJSON(json) { 
+        super.fromJSON(json);
+        this.columnNames = new Set(this.columnNames);
+        return this;
     }
 }
 
@@ -48,24 +77,38 @@ class DbColumnMetadata extends AbstractDbMetadata {
     precision = "";
     nullable = "";
 
-    constructor(name) {
-        super(name);
-    }
+    toJSON() { 
+        let json = super.toJSON();
+        json.tableName = this.tableName;
+        json.type = this.type;
+        json.length = this.length;
+        json.charLength = this.charLength;
+        json.precision = this.precision;
+        json.nullable = this.nullable;
+        return json;
+    }    
 }
 
 /**
  */
 class DbConstraintMetadata extends AbstractDbMetadata {
-    type = "";
     tableName = "";
     columnName = "";
+    type = "";
     deleteRule = "";
     searchCondition = "";
     relationConstraintName = "";
 
-    constructor(name) {
-        super(name);
-    }
+    toJSON() { 
+        let json = super.toJSON();
+        json.tableName = this.tableName;
+        json.columnName = this.columnName;
+        json.type = this.type;
+        json.deleteRule = this.deleteRule;
+        json.searchCondition = this.searchCondition;
+        json.relationConstraintName = this.relationConstraintName;
+        return json;
+    }    
 }
 
 /**
@@ -75,13 +118,23 @@ class DbIndexMetadata extends AbstractDbMetadata {
     uniqueness = "";
     columnNames = new Set();
 
-    constructor(name) {
-        super(name);
-    }
-
     addColumnName(name) {
 	    this.columnNames.add(name);
 	}
+
+    toJSON() { 
+        let json = super.toJSON();
+        json.tableName = this.tableName;
+        json.uniqueness = this.uniqueness;
+        json.columnNames = Array.from(this.columnNames.values());
+        return json;
+    }    
+
+    fromJSON(json) { 
+        super.fromJSON(json);
+        this.columnNames = new Set(this.columnNames);
+        return this;
+    }
 }
 
 /**
