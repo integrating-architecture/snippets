@@ -4,12 +4,17 @@ package org.isa.snip.dbmodel;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.logging.Logger;
+
+import org.isa.snip.dbmodel.util.Helper;
 
 /**
  */
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public abstract class AbstractDbModel {
 
+	private static final Logger LOG = Helper.getLoggerFor(AbstractDbModel.class);
+	
 	protected Map<String, DbTableMetadata> tables = new LinkedHashMap<>();
 	protected Map<String, DbColumnMetadata> columns = new LinkedHashMap<>();
 	protected Map<String, DbConstraintMetadata> constraints = new LinkedHashMap<>();
@@ -33,6 +38,8 @@ public abstract class AbstractDbModel {
 	protected void putToMap(Map pDestMap, Object pKey, Object pData) {
 		if (!pDestMap.containsKey(pKey)) {
 			pDestMap.put(pKey, pData);
+		}else {
+			LOG.warning("Duplicate metadata key: ["+pKey+"] ["+pData.getClass().getSimpleName()+"]");
 		}
 	}
 
