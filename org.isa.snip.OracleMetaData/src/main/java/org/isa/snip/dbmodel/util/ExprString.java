@@ -4,71 +4,90 @@ package org.isa.snip.dbmodel.util;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
- * A rudimentary class to work with template strings that include variable
- * expressions.
- * 
  * <pre>
- * e.g. ExprString.newFor("Hello ${visitor} I'am ${myname}")
- * 			.put("visitor", "John")
- * 			.put("myname", "Andreas")
- * 			.build();
+ * A simple class implementing template strings that include variable expressions.
+ *
+ * e.g. new ExprString("Hello ${visitor} I'am ${me}")
+ *          .put("visitor", "John")
+ *          .put("me", "Andreas")
+ *          .build();
  * results in: "Hello John I'am Andreas"
  * </pre>
  */
 public class ExprString {
-	public static final String ExprPattern = "\\$\\{name\\}";
+    private static final String PatternStart = "${";
+    private static final String PatternEnd = "}";
+    private static final String PatternRegex = "\\$\\{\\w+\\}";
+    private static final Pattern ExprPattern = Pattern.compile(PatternRegex);
 
-	private String target = "";
-	private Map<String, String> valueMap = new HashMap<>();
+    private String template = "";
+    private Map<String, String> valueMap = new HashMap<>();
+    private ValueProvider provider = (String pKey) -> valueMap.getOrDefault(pKey, "");
 
-	/**
-	 */
-	public static ExprString newFor(String pTarget) {
-		return new ExprString(pTarget);
-	}
+    /**
+     */
+    private ExprString() {
+    }
 
-	/**
-	 */
-	public ExprString(String pTarget) {
-		target = pTarget;
-	}
+    /**
+     */
+    public ExprString(String pTemplate) {
+        this();
+        template = pTemplate;
+    }
 
-	/**
-	 */
-	private String fillExpressions(String pTemplate, Map<String, String> pValues) {
-		String lResult = pTemplate;
-		String lVal = "";
-		String lPattern = "";
+    /**
+     */
+    public ExprString(String pTemplate, ValueProvider pProvider) {
+        this(pTemplate);
+        provider = pProvider;
+    }
 
-		for (String key : pValues.keySet()) {
-			lPattern = ExprPattern.replace("name", key);
-			lVal = pValues.getOrDefault(key, "");
-			lResult = lResult.replaceAll(lPattern, lVal);
-		}
-		return lResult;
-	}
+    /**
+     */
+    @Override
+    public String toString() {
+        return template;
+    }
 
-	/**
-	 */
-	@Override
-	public String toString() {
-		return target;
-	}
+    /**
+     */
+    public ExprString put(String pKey, String pValue) {
+        valueMap.put(pKey, pValue);
+        return this;
+    }
 
-	/**
-	 */
-	public ExprString put(String pKey, String pValue) {
-		valueMap.put(pKey, pValue);
-		return this;
-	}
+    /**
+     */
+    public String build() {
+        StringBuilder lResult = new StringBuilder();
+        String lPart = "";
+        String lName = "";
+        String lValue = "";
+        Matcher lMatcher = ExprPattern.matcher(template);
 
-	/**
-	 */
-	public String build() {
-		String lResult = "";
-		lResult = fillExpressions(target, valueMap);
-		return lResult;
-	}
+        int lCurrentPos = 0;
+        while (lMatcher.find()) {
+            lPart = template.substring(lCurrentPos, lMatcher.start());
+            lName = lMatcher.group().replace(PatternStart, "").replace(PatternEnd, "");
+            lValue = provider.getValue(lName);
+            lResult.append(lPart).append(lValue);
+            lCurrentPos = lMatcher.end();
+        }
+        if (lCurrentPos < template.length()) {
+            lPart = template.substring(lCurrentPos, template.length());
+            lResult.append(lPart);
+        }
+        return lResult.toString();
+    }
+
+    /**
+     */
+    public static interface ValueProvider {
+        String getValue(String pKey);
+    }
 }
