@@ -1,7 +1,7 @@
 # A public Snippets Repository 
 Various code snippets and examples - for illustrative or testing purposes - hosted on <a href="https://github.com/integrating-architecture">GitHub</a>
 
-Authored by: <a href="https://integrating-architecture.de/">Andreas Weidinger - www.integrating-architecture.de</a> 
+Authored by: <a href="https://iqbserve.de/">Andreas Weidinger - www.iqbserve.de</a> 
 <br />
 ### Description
 * <a href="https://github.com/integrating-architecture/snippets/tree/master/org.isa.snip.OracleMetaData">org.isa.snip.OracleMetaData</a> - Java sample accessing Oracle DB DDL Metadata
